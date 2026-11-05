@@ -1,0 +1,56 @@
+{
+  "name": "indiaval",
+  "version": "0.1.0",
+  "description": "Tiny, zero-dependency validators for Indian identifiers: PAN, GSTIN, IFSC, PIN code, mobile and Aadhaar.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./dom": {
+      "types": "./src/dom.d.ts",
+      "default": "./src/dom.js"
+    },
+    "./auto": {
+      "types": "./src/auto.d.ts",
+      "default": "./src/auto.js"
+    }
+  },
+  "sideEffects": [
+    "./src/auto.js"
+  ],
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "india",
+    "validation",
+    "pan",
+    "gstin",
+    "ifsc",
+    "aadhaar",
+    "pincode"
+  ],
+  "license": "MIT",
+  "author": "Mukesh Gupta (https://mukeshgupta.co)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhikalpitbharat/IndiaVal.git"
+  },
+  "homepage": "https://abhikalpitbharat.org/IndiaVal",
+  "bugs": {
+    "url": "https://github.com/abhikalpitbharat/IndiaVal/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.0"
+  }
+}
