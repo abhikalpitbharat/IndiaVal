@@ -1,6 +1,6 @@
 {
   "name": "indiaval",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tiny, zero-dependency validators for Indian identifiers: PAN, GSTIN, IFSC, PIN code, mobile and Aadhaar.",
   "type": "module",
   "main": "src/index.js",
