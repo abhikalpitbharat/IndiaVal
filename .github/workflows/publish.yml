@@ -1,5 +1,32 @@
 name: Publish to npm
 
+# Publishes to npm when you publish a GitHub Release.
+# The Run workflow button on the Actions tab still works as a manual fallback.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+# "id-token: write" lets this workflow prove to npm who it is (npm trusted publishing),
+# so no npm token is stored anywhere.
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm install
+      - run: npm test
+      - run: npm publish --access public
+name: Publish to npm
+
 # Runs only when someone clicks "Run workflow" on the Actions tab.
 on:
   workflow_dispatch:
